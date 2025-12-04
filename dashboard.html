@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Welcome, {{ current_user.email }}!</h2>
+<nav>
+  <a href="{{ url_for('download_dataset') }}">Download Fingerprinted Dataset</a> |
+  <a href="{{ url_for('identify') }}">Identify Leaked File</a> |
+  {% if current_user.is_admin %}
+    <a href="{{ url_for('admin_upload') }}">Admin Identify</a> |
+  {% endif %}
+  <a href="{{ url_for('logout') }}">Logout</a>
+</nav>
+{% endblock %}

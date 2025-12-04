@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Identify Leaker{% endblock %}
+{% block content %}
+<h2>Upload Fingerprinted Dataset</h2>
+<p>Anyone can upload a leaked file to trace its origin.</p>
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="file" accept=".csv,.parquet" required>
+  <button type="submit">Identify</button>
+</form>
+<p><a href="{{ url_for('index') }}">Back to Home</a></p>
+{% endblock %}
